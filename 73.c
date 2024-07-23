@@ -48,16 +48,17 @@ int calcularModa(int v[n])
 // calcular a mediana dos elementos
 int calcularMediana(int v[n])
 {
-	int mediana = v[0];
+	float mediana = v[0];
 
 	// obter o elemento da posição do 'meio' do vetor
 	if (n != 1) 
-	for (int ic = 1; ic <= n; ic++)
+	for (int ic = 0; ic < n; ic++)
 	{
 
 		if (n%2 == 0)
 		{
-			if (ic == n/2) mediana = v[ic - 1];
+			if (ic == n/2) 
+				mediana = (v[ic - 1] + v[ic]) / 2.00;
 		}
 		else
 		{
@@ -91,7 +92,7 @@ int main (void)
 {
 	// variáveis do comando da questão
 	int moda;
-	int mediana;
+	float  mediana;
 	float media;
 
 	// número de elementos do vetor
@@ -122,7 +123,7 @@ int main (void)
 
 	// saída do programa
 	printf("\nA moda do vetor passado é %d.\n", moda);	
-	printf("\nA mediana é: %d.\n", mediana);
+	printf("\nA mediana é: %f.\n", mediana);
 
 	printf("\nA média de todos os elementos é: %f.\n", media);
 
